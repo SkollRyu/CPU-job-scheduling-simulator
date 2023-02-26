@@ -1,4 +1,4 @@
-scheduler=FcfsScheduler
+scheduler=RRScheduler
 timeLimit=10000
 periodic=false
 interruptTime=0
