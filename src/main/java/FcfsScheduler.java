@@ -22,6 +22,7 @@ public class FcfsScheduler extends AbstractScheduler {
    * Adds a process to the ready queue.
    */
   public void ready(Process process, boolean usedFullTimeQuantum) {
+      // offer(E e) = adds the specified element as the tail (last element) of this list
     readyQueue.offer(process);
   }
 
@@ -33,5 +34,6 @@ public class FcfsScheduler extends AbstractScheduler {
   public Process schedule() {
     System.out.println("Scheduler selects process "+readyQueue.peek());
     return readyQueue.poll();
+    // returns the first element of this list, or null if this list is empty.
   }
 }

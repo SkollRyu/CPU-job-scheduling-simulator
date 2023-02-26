@@ -25,32 +25,27 @@ public abstract class Process implements Comparable<Process> {
   
   /**
    * Returns the time the process spends waiting in the ready queue.
+   * WT = TAT - BT
    */
   public int getWaitingTime() {
-
-    // TODO
-    
-    return 0;
+    return getTurnaroundTime() - cpuTime;
   }
 
   /**
-   *  Returns the turnaround time of the process.
+   *  Returns the turnaround time of the process
+   *  total amount of time spent by the process from coming in the ready state for the first time to its completion
+   *  TAT = Completion Time - Arrival Time
    */
   public int getTurnaroundTime() {
-
-    // TODO
-    
-    return 0;
+    return terminatedTime - startedTime;
   }
 
   /**
    * Returns the response time of the process.
+   * RT = first time run on CPU - arrival time
    */
   public int getResponseTime() {
-
-    // TODO
-    
-    return 0;
+    return startedTime - createdTime;
   }
 
   /**
