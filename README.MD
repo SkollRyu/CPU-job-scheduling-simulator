@@ -4,12 +4,16 @@ and schedulers, and analyse the results to determine in which situations each
 scheduling algorithm works most efficiently.
 
 ## How to run it
+- [ ] Bash Script / python script to run all schedulers in one experiment
+  - a script to automatically reproduce the files in output/ from the files in input/ 
+    and corresponding parameters.prp files for each experiment
+- [ ] A python script to extract all the output.out and plot it with a graph
 
 ## AIM
 To investigate the performance of different CPU scheduling algorithms.
 
 ### Implementation
-Performance Metrices
+Performance Metrics
 - [x] Turnaround time [3/9]
 - [x] Waiting time [3/9]
 - [x] Response time [3/9]

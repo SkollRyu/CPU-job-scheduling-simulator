@@ -1,4 +1,5 @@
 import java.util.Properties;
+import java.util.PriorityQueue;
 
 /**
  * Ideal Shortest Job First Scheduler
@@ -7,7 +8,8 @@ import java.util.Properties;
  */
 public class IdealSJFScheduler extends AbstractScheduler {
 
-  // TODO
+  // TODO - use a heap? Priority Queue
+  PriorityQueue readyQueue = new PriorityQueue<Process>();
 
   /**
    * Adds a process to the ready queue.

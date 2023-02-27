@@ -7,7 +7,8 @@ import java.util.Properties;
  */
 public class SJFScheduler extends AbstractScheduler {
 
-  // TODO
+  // TODO - predict(n+1) = (1/2)(Actual Current Burst time) + (1 - 1/2)(predicted current burst time)
+  // Don't use getNextBurst(), cuz you can't predict the future
 
   /**
    * Adds a process to the ready queue.
