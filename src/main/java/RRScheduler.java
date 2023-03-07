@@ -38,7 +38,6 @@ public class RRScheduler extends AbstractScheduler {
    * after having fully used its time quantum.
    */
   public void ready(Process process, boolean usedFullTimeQuantum) {
-
     // TODO - Don't know if this is right
     if (usedFullTimeQuantum) {
       readyQueue.offer(process);

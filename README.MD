@@ -44,3 +44,21 @@ Experiment 3 [13/45]
 - Results visualised [3/13]
 - Results discussed [3/13]
 
+## Parameters
+### Input_generator
+- numberOfProcesses: number of processes
+- staticPriority: priority for each process
+- meanInterArrival: the interval of arrival time
+- meanCpuBurst: CPU burst time
+- meanIOBurstL: IO burst time -> if it is not 0, a process will need to wait
+- meanNumberBursts: tbc
+- seed: seed
+
+### Scheduler
+- scheduler: FcfsScheduler, RRScheduler, IdealSJFScheduler, FeedbackRRScheduler, SJFScheduler
+- timeLimit: tbc
+- periodic: tbc
+- interruptTime: tbc
+- timeQuantum: the time that RRScheduler assign for each process, usually around 20 - 50ms
+- initialBurstEstimate: tbc
+- alphaBurstEstimate: tbc

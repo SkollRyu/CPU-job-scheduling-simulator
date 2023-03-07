@@ -1,7 +1,7 @@
-scheduler=RRScheduler
+scheduler=IdealSJFScheduler
 timeLimit=10000
 periodic=false
 interruptTime=0
-timeQuantum=20
+timeQuantum=4
 initialBurstEstimate=10
 alphaBurstEstimate=0.5

@@ -24,6 +24,9 @@ public class FcfsScheduler extends AbstractScheduler {
   public void ready(Process process, boolean usedFullTimeQuantum) {
       // offer(E e) = adds the specified element as the tail (last element) of this list
     readyQueue.offer(process);
+    for (Process p : readyQueue){
+        System.out.println(p.id);
+    }
   }
 
   /**
