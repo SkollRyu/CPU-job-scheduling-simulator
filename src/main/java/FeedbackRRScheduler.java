@@ -14,12 +14,29 @@ public class FeedbackRRScheduler extends AbstractScheduler {
 
   // n-layer queue in ready-queue
   // or just different queue (L1, L2, L3, L4) - then how can we scale the range of priority?
+  // for each level: we have different time quantum, how can we achieve that?
 
   // we can use set priority to demote or upgrade the process
-  List<Queue<Process>> multiLevelQueue;
-
+  PriorityQueue<Process> readyQueue = new PriorityQueue<>();
+  private int timeQuantum;
   public FeedbackRRScheduler(){
-    multiLevelQueue = new ArrayList<>();
+    readyQueue = new PriorityQueue<>((p1, p2) -> p1.getPriority() - p2.getPriority());
+  }
+
+  @Override
+  public void initialize(Properties parameters) {
+    super.initialize(parameters);
+    this.timeQuantum = Integer.parseInt(parameters.getProperty("timeQuantum"));
+  }
+
+  @Override
+  public int getTimeQuantum() {
+    return timeQuantum;
+  }
+
+  @Override
+  public boolean isPreemptive() {
+    return true;
   }
 
 
@@ -30,8 +47,12 @@ public class FeedbackRRScheduler extends AbstractScheduler {
    */
   public void ready(Process process, boolean usedFullTimeQuantum) {
     // TODO
-
-
+    if (usedFullTimeQuantum){
+      // demote it
+      // TODO - edge case, the process we are trying to demote is in the lowest queue already
+      process.setPriority(process.priority + 1);
+    }
+    readyQueue.offer(process);
   }
 
   /**
@@ -42,13 +63,7 @@ public class FeedbackRRScheduler extends AbstractScheduler {
   public Process schedule() {
 
     // TODO - A for-loop to check from higher queue to lower queue
-    Process processToBeExecuted = null;
-    for (Queue<Process> q : multiLevelQueue){
-      if (!q.isEmpty()){
-        processToBeExecuted = q.poll();
-        break;
-      }
-    }
-    return processToBeExecuted;
+    System.out.println("Scheduler selects process "+readyQueue.peek());
+    return readyQueue.poll();
   }
 }

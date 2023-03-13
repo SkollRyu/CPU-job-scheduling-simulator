@@ -51,14 +51,14 @@ Experiment 3 [13/45]
 - meanInterArrival: the interval of arrival time
 - meanCpuBurst: CPU burst time
 - meanIOBurstL: IO burst time -> if it is not 0, a process will need to wait
-- meanNumberBursts: tbc
+- meanNumberBursts: burst in process
 - seed: seed
 
 ### Scheduler
 - scheduler: FcfsScheduler, RRScheduler, IdealSJFScheduler, FeedbackRRScheduler, SJFScheduler
-- timeLimit: tbc
-- periodic: tbc
-- interruptTime: tbc
+- timeLimit: whole simulating running time
+- periodic: if periodic, create duplicate events at multiples of inter-arrival time plus cpu plus io time
+- interruptTime: Time for IO waiting
 - timeQuantum: the time that RRScheduler assign for each process, usually around 20 - 50ms
-- initialBurstEstimate: tbc
-- alphaBurstEstimate: tbc
+- initialBurstEstimate: for SJF
+- alphaBurstEstimate: for SJF

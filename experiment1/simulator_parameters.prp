@@ -1,4 +1,4 @@
-scheduler=IdealSJFScheduler
+scheduler=SJFScheduler
 timeLimit=10000
 periodic=false
 interruptTime=0

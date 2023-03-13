@@ -9,5 +9,9 @@
     - UPDATE: WE Don't need to solve it!!!!!
 
 ## Issues
-- [ ] How to pass prp's timeQuantum into RR class?
+- [x] How to pass prp's timeQuantum into RR class?
   - Kind of done, but don't know if it's the right way
+
+## Plans
+- [] Make sure the algorithm is implemented correctly
+  - [] make some test case for preemptive and non-preemptive
