@@ -20,10 +20,10 @@ Performance Metrics
 
 Scheduling Algorithm
 - [x] FCFS
-- [ ] Round Robin [8/46]
-- [ ] Ideal Shortest Job First [10/46]
-- [ ] Multi-level feedback queue with Round Robin [13/46]
-- [ ] Shortest Job First using exponential averaging [15/46]
+- [x] Round Robin [8/46]
+- [x] Ideal Shortest Job First [10/46]
+- [x] Multi-level feedback queue with Round Robin [13/46]
+- [x] Shortest Job First using exponential averaging [15/46]
 
 ### Experiments
 - Experiment 1 [13/45]

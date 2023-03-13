@@ -49,7 +49,6 @@ public class FeedbackRRScheduler extends AbstractScheduler {
     // TODO
     if (usedFullTimeQuantum){
       // demote it
-      // TODO - edge case, the process we are trying to demote is in the lowest queue already
       process.setPriority(process.priority + 1);
     }
     readyQueue.offer(process);
@@ -61,8 +60,6 @@ public class FeedbackRRScheduler extends AbstractScheduler {
    * Returns null if there is no process to run.
    */
   public Process schedule() {
-
-    // TODO - A for-loop to check from higher queue to lower queue
     System.out.println("Scheduler selects process "+readyQueue.peek());
     return readyQueue.poll();
   }
