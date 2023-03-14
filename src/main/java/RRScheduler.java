@@ -39,11 +39,7 @@ public class RRScheduler extends AbstractScheduler {
    */
   public void ready(Process process, boolean usedFullTimeQuantum) {
     // TODO - Don't know if this is right
-    if (usedFullTimeQuantum) {
       readyQueue.offer(process);
-    } else {
-      readyQueue.offerFirst(process);
-    }
   }
 
   /**
@@ -53,7 +49,10 @@ public class RRScheduler extends AbstractScheduler {
    */
   public Process schedule() {
     // TODO - this should be right
-    System.out.println("Scheduler selects process "+readyQueue.peek());
-    return readyQueue.poll();
+    if (!readyQueue.isEmpty()){
+      System.out.println("Scheduler selects process "+readyQueue.peek());
+      return readyQueue.poll();
+    }
+    return null;
   }
 }

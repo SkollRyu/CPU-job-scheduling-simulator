@@ -44,7 +44,10 @@ public class SJFScheduler extends AbstractScheduler {
   public Process schedule() {
 
     // TODO
-    System.out.println("Scheduler selects process "+readyQueue.peek());
-    return readyQueue.poll();
+    if (!readyQueue.isEmpty()){
+      System.out.println("Scheduler selects process "+readyQueue.peek());
+      return readyQueue.poll();
+    }
+    return null;
   }
 }

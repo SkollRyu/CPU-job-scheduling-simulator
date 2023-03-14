@@ -60,7 +60,10 @@ public class FeedbackRRScheduler extends AbstractScheduler {
    * Returns null if there is no process to run.
    */
   public Process schedule() {
-    System.out.println("Scheduler selects process "+readyQueue.peek());
-    return readyQueue.poll();
+    if (!readyQueue.isEmpty()){
+      System.out.println("Scheduler selects process "+readyQueue.peek());
+      return readyQueue.poll();
+    }
+    return null;
   }
 }

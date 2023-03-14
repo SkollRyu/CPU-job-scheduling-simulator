@@ -21,11 +21,6 @@ public class IdealSJFScheduler extends AbstractScheduler {
     // if they arrive at the same time, this process need to check next process?
     // how does the ready is called
     readyQueue.offer(process);
-    System.out.println("Ready");
-    System.out.println("Next Burst" + process.getNextBurst());
-    for (Process p : readyQueue){
-      System.out.println(p.id);
-    }
   }
 
   /**
@@ -35,7 +30,10 @@ public class IdealSJFScheduler extends AbstractScheduler {
    */
   public Process schedule() {
     // TODO
-    System.out.println("Scheduler selects process "+readyQueue.peek());
-    return readyQueue.poll();
+    if (!readyQueue.isEmpty()){
+      System.out.println("Scheduler selects process "+readyQueue.peek());
+      return readyQueue.poll();
+    }
+    return null;
   }
 }

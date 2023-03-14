@@ -24,9 +24,6 @@ public class FcfsScheduler extends AbstractScheduler {
   public void ready(Process process, boolean usedFullTimeQuantum) {
       // offer(E e) = adds the specified element as the tail (last element) of this list
     readyQueue.offer(process);
-    for (Process p : readyQueue){
-        System.out.println(p.id);
-    }
   }
 
   /**
@@ -35,8 +32,11 @@ public class FcfsScheduler extends AbstractScheduler {
    * Returns null if there is no process to run.
    */
   public Process schedule() {
-    System.out.println("Scheduler selects process "+readyQueue.peek());
-    return readyQueue.poll();
+      if (!readyQueue.isEmpty()){
+          System.out.println("Scheduler selects process "+readyQueue.peek());
+          return readyQueue.poll();
+      }
+      return null;
     // returns the first element of this list, or null if this list is empty.
   }
 }
