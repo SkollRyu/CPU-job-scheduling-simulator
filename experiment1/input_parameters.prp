@@ -1,8 +1,8 @@
 numberOfProcesses=5
 staticPriority=0
-meanInterArrival=0.0
+meanInterArrival=10.0
 meanCpuBurst=10.0
-meanIOBurst=10.0
+meanIOBurst=5.0
 meanNumberBursts=5
-seed=270826029269605
+seed=100000000026263
 

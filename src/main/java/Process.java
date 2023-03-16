@@ -37,7 +37,7 @@ public abstract class Process implements Comparable<Process> {
    *  TAT = Completion Time - Arrival Time
    */
   public int getTurnaroundTime() {
-    return terminatedTime - startedTime;
+    return terminatedTime - createdTime;
   }
 
   /**
