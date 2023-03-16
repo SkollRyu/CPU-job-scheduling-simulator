@@ -4,10 +4,15 @@ and schedulers, and analyse the results to determine in which situations each
 scheduling algorithm works most efficiently.
 
 ## How to run it
-- [ ] Bash Script / python script to run all schedulers in one experiment
+1. `chmod +x ./run.sh` to give it permission to read and write
+2. `./run.sh <integer>` to run it with the number of test cases you want or by default it is 15
+3. Result will be in a juypter notebook named, `exectued_report.ipynb`
+
+### Log
+- [x] Bash Script / python script to run all schedulers in one experiment
   - a script to automatically reproduce the files in output/ from the files in input/ 
     and corresponding parameters.prp files for each experiment
-- [ ] A python script to extract all the output.out and plot it with a graph
+- [x] A python script to extract all the output.out and plot it with a graph
 
 ## AIM
 To investigate the performance of different CPU scheduling algorithms.
