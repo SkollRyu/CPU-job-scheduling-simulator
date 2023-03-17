@@ -28,6 +28,17 @@ if [[ ! -z "$1" ]]; then
     test_cases=$1
 fi
 
+# Clear files
+
+# clean experiment 1
+rm -rf experiment1/inputs/*
+rm -rf experiment1/scheduler/FCFS/output/*
+rm -rf experiment1/scheduler/ISJF/output/*
+rm -rf experiment1/scheduler/RR/output/*
+rm -rf experiment1/scheduler/SJF/output/*
+
+
+# Input Generate
 for (( i = 1; i <= $test_cases; i++ ))
 do
     java -cp target/os-coursework1-1.0-SNAPSHOT.jar InputGenerator experiment1/input_parameters.prp experiment1/inputs/inputs${i}.in
@@ -37,10 +48,15 @@ do
     # java -cp target/os-coursework1-1.0-SNAPSHOT.jar InputGenerator experiment3/input_parameters.prp experiment3/inputs/inputs${i}.in
 done
 
+
+# Run Simulation
 for (( i = 1; i <= $test_cases; i++ ))
 do
+    # exp 1
     java -cp target/os-coursework1-1.0-SNAPSHOT.jar Simulator experiment1/scheduler/FCFS/simulator_parameters.prp experiment1/scheduler/FCFS/output/output${i}.out experiment1/inputs/inputs${i}.in
+    java -cp target/os-coursework1-1.0-SNAPSHOT.jar Simulator experiment1/scheduler/ISJF/simulator_parameters.prp experiment1/scheduler/ISJF/output/output${i}.out experiment1/inputs/inputs${i}.in
     java -cp target/os-coursework1-1.0-SNAPSHOT.jar Simulator experiment1/scheduler/RR/simulator_parameters.prp experiment1/scheduler/RR/output/output${i}.out experiment1/inputs/inputs${i}.in
+    java -cp target/os-coursework1-1.0-SNAPSHOT.jar Simulator experiment1/scheduler/SJF/simulator_parameters.prp experiment1/scheduler/SJF/output/output${i}.out experiment1/inputs/inputs${i}.in
 done
 
 #!/bin/bash
