@@ -67,3 +67,7 @@ Experiment 3 [13/45]
 - timeQuantum: the time that RRScheduler assign for each process, usually around 20 - 50ms
 - initialBurstEstimate: for SJF
 - alphaBurstEstimate: for SJF
+
+###
+This graph has a much stronger relationship than line chart
+https://matplotlib.org/stable/gallery/statistics/customized_violin.html#sphx-glr-gallery-statistics-customized-violin-py

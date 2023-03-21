@@ -23,7 +23,6 @@ public class SJFScheduler extends AbstractScheduler {
   public int estimatingNextBurst(Process process){
     int guess = (int) ((process.getRecentBurst() * alphaBurstEstimate) + (1 - alphaBurstEstimate)*initialBurstEstimate);
     initialBurstEstimate = guess;
-    System.out.println(guess);
     return guess;
   }
   /**
